@@ -9,6 +9,8 @@ Easy to use Hytale server as a container. This does **not** produce an image, bu
 - You have read [Hytale's Server Setup Guide](https://support.hytale.com/hc/en-us/articles/45326769420827-Hytale-Server-Manual#running-a-hytale-server)
 - Firewall allows 5520 UDP (or your specified port)
 
+## First time setup
+
 ## How to use
 
 1. Clone this repository to your local machine:
@@ -24,12 +26,17 @@ Easy to use Hytale server as a container. This does **not** produce an image, bu
    ./start.sh
    ```
 
-3. Authenticate your server according to Hytale's Server Setup Guide.
-4. Enjoy!
+3. Exit logs with `CTRL+C`, server will keep running in background
+4. Attach using `./attach.sh`
+5. Run `/auth login device` in the server console to get your authentication code
+6. Navigate through the OAuth flow to authorize your server
+7. Run `/auth persistence Encrypted` to store your authentication persistently
+8. Unattach using `CTRL+P+Q` (optional)
+9. Enjoy! (required)
 
 ## Scripts
 
-- `start.sh`: Starts/Restarts the server and attaches to the logs. Quit with `CTRL+C`.
+- `start.sh`: Starts/Restarts the server and attaches to the logs. Unattach with `CTRL+C`.
 - `stop.sh`: Stops the server container
 - `logs.sh`: Attaches to the server logs. Quit with `CTRL+C`.
 - `attach.sh`: Attaches to the server console. Quit with `CTRL+P+Q`.
@@ -49,11 +56,6 @@ Delete `data/hytale.zip` and run `start.sh` again to update to the latest versio
   This may lead to data loss or even corruption.
 
 - No automatic update check on each start.
-
-- You have to authenticate the server on each start.
-  This is a limitation by Hytale for now.
-  As a workaround, it would be possible to acquire a token using curl before the server starts, and pass it as an environment variable.
-  This is documented in [Hytale's Server Provider Authentication Guide](https://support.hytale.com/hc/en-us/articles/45328341414043-Server-Provider-Authentication-Guide).
 
 ## Contributing
 

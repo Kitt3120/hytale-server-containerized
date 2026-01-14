@@ -10,5 +10,6 @@ services:
     volumes:
       - ./data:/data
       - ./container-scripts:/scripts
+      - /etc/machine-id:/etc/machine-id:ro
     working_dir: /data
     command: ["/scripts/bootstrap.sh"]
