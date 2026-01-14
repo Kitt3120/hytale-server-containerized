@@ -1,0 +1,13 @@
+services:
+  hytale:
+    image: debian:13-slim
+    restart: always
+    stdin_open: true
+    tty: true
+    ports:
+      - "5520:5520/udp"
+    volumes:
+      - ./data:/data
+      - ./container-scripts:/scripts
+    working_dir: /data
+    command: ["/scripts/bootstrap.sh"]
