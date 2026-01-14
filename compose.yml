@@ -1,6 +1,7 @@
 services:
   hytale:
     image: debian:13-slim
+    container_name: hytale-server
     restart: always
     stdin_open: true
     tty: true

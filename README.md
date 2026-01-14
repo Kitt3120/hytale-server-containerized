@@ -4,8 +4,7 @@ Easy to use Hytale server as a container. This does **not** produce an image, bu
 
 ## Prerequisites
 
-- Docker or Podman installed on your system
-- If you use Docker, ensure to edit the `start.sh`, `stop.sh`, `logs.sh`, and `attach.sh` scripts accordingly. They are meant for Podman for now.
+- Docker or Podman installed on your system (scripts auto-detect which is available)
 - Compose working with your container engine
 - You have read [Hytale's Server Setup Guide](https://support.hytale.com/hc/en-us/articles/45326769420827-Hytale-Server-Manual#running-a-hytale-server)
 - Firewall allows 5520 UDP (or your specified port)
@@ -48,6 +47,8 @@ Delete `data/hytale.zip` and run `start.sh` again to update to the latest versio
   However, the Hytale server does not handle SIGTERM properly yet.
   After a timeout, the container engine forcefully kills the process.
   This may lead to data loss or even corruption.
+
+- No automatic update check on each start.
 
 - You have to authenticate the server on each start.
   This is a limitation by Hytale for now.
