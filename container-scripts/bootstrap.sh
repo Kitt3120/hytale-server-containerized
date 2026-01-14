@@ -28,8 +28,6 @@ echo "> Hytale Downloader CLI version:"
 echo "> Checking for Hytale Downloader CLI updates"
 ./hytale-downloader/hytale-downloader-linux-amd64 -check-update
 
-# only do this if hytale.zip does not already exist
-
 if [ ! -f hytale.zip ]; then
     echo "> Downloading Hytale"
     ./hytale-downloader/hytale-downloader-linux-amd64 -download-path hytale.zip
